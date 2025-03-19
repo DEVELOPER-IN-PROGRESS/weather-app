@@ -3,21 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Page</title>
+<title>Weather Scanner</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="./style.css">
 </head>
 <body class="lightmode">
     <div class="m-0 p-0 overlay w-[100vw] h-[100vh] bg-slate-700 opacity-75 overflow-x-0 z-0 hidden"></div>
 
-    <div class="data_overlay md:w-[60vw] lg:w-[60vw] h-[50vh] bg-sky-500 rounded-[30px] border-3 border-green absolute top-[50vh] left-[50vw] -translate-1/2">
+    <div class="data_overlay flex items-start md:items-center md:justify-start flex-col md:items-center max-sm:h-[90vh]  w-[80vw] md:w-[60vw] lg:w-[60vw] h-[50vh] xl:h-[70vh] bg-sky-500 rounded-[30px] border-3 border-green absolute top-[50vh] left-[50vw] -translate-1/2">
 
-        <div class="container :w-100  mx-auto lg:mt-5">
-
-            <form  id="data-submit" id="weather" class="mx-auto sm:w-[40vw] lg:w-[90%] p-0 rounded-[50px] container-weather  border-2 relative input__form relative">
+        <div class="container mt-10 md:mt-10 mx-auto lg:mt-5">
+            <h1 class="text-center my-5 title">
+                Weather Scanner
+            </h1>
+            <form  id="data-submit" id="weather" class="mx-auto md:mt-10 sm:w-[40vw] lg:w-[90%] p-0 rounded-[50px] container-weather  border-2 relative input__form relative">
                     <input  type="text" placeholder="Enter city" class="w-[100%] px-2 focus:outline-none form-control" id="cityname" >
-                    <button type="button" class="grid place-items-center absolute  submit text--blue bg-green-100 "  onclick="fetch_weather_data()"><i class="fas fa-search w-[16px]"></i></button>
+                    <button type="button" class="grid place-items-center absolute  submit text--blue bg-green-100 "  onclick="fetch_weather_data()">
+                        <i class="fas fa-search srchicon w-[16px]"></i>
+                    </button>
             </form>
 
             <div class="togglenight day" id="toggle" role="button" aria-pressed="false">
@@ -27,7 +35,7 @@
         </div>
 
         <div id="content" class="mt-5 grid grid-cols-1 md:grid-cols-4 md:grid-flow-row gap-2">
-            <!-- <div class="ps-5 md:col-span-2">
+            <!-- <div class="ps-5 md:ps-15 md:col-span-2">
                 <p class="location text-lg">
                     <i class="fa-solid fa-location-dot "></i>
                     <span id="place"></span>
@@ -35,45 +43,39 @@
                 <p class="location text-lg">
                     <span id="temperature"></span>
                 </p>
+                <p class="">
+                    <i class="fa-solid fa-temperature-low"></i>
+                    Feels Like:
+                </p>
+
+                <img src="https://openweathermap.org/img/wn/${wea.weather[0].icon}@2x.png" alt="" width="120px">
+                <h6>${wea.weather[0].main} clear</h6>
+                <span> ${wea.weather[0].description} Clear Sky</span>
+                <span class="mt-4">Current Time</span>
 
             </div>
             <div class="ps-5 md:col-span-2">
-                <p class="location text-lg">
+                <p class="location ">
+                    <i class="fas fa-tint"></i>
                     Humidity
                     <span id="humidity"></span>
                 </p>
 
                 <p class="">
+                    <i class="fas fa-wind"></i>
                     Wind Speed
                     <span id="wind"></span>
                 </p>
 
                 <p class="">
+                    <i class="fas fa-tachometer-alt"></i>
                     Pressure
                     <span id="pressure"></span>
                 </p>
 
-
-                <p class="">
-                    <span id="date"></span>
-                </p>
-
-
             </div> -->
         </div>
     </div>
-
-    <!-- <div class="weather_card none">
-        <p class="">Temperature <span id="temp"></span></p>
-        <p class="">Feels Like <span id="="></span></p>
-        <p class="">Location <span id="="></span></p>
-        <p class="">Time <span id="="></span></p>
-        <p class="">Place  <span id="="></span></p>
-        <p class="">Country <span id="="></span></p>
-        <p class="">Humidity <span id="="></span></p>
-        <p class="">Wind Speed <span id="="></span></p>
-        <p class="">Pressure <span id="="></span></p>
-    </div> -->
 
 <script src="./script.js"></script>
 </body>

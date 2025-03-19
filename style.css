@@ -1,12 +1,17 @@
+*{
+    font-family: "Arvo", serif;
+}
+
 body{
-    background-size:cover;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
 }
 
 .darkmode{
-    --light-card:   rgb(22 20 72 / 65%);;
+    --light-card:   rgb(22 20 72 / 24%);
     --card-border: 1px solid rgba(255, 255, 255, 0.125);
     --btn-toggle-clr:  #9ee3fb  ;
+    --ip-border:white ;
 
     /* custom */
     --mooncolor: #D9FBFF;
@@ -20,9 +25,11 @@ body{
     --light-card:  rgb(235 247 255 / 39%);
     --card-border: 1px solid rgba(255, 255, 255, 0.125);
     --btn-toggle-clr:#423966;
+    --ip-border:#010e34f3 ;
+
     --lightbg: #fff;
     --mooncolor: #ffffff;
-    --text-color: #001f75f3;
+    --text-color: #010e34f3;
     --card-shadow: #0e3938;
 }
 
@@ -49,7 +56,6 @@ body{
     background: var(--bgColor--night);
     border: 2px solid var(--mooncolor);
   }
-
 
   .day{
     background: #FFBF71;
@@ -99,11 +105,19 @@ body{
       -3.5em -3.5em 0 -3em #fff;
   }
 
+  body.lightmode{
+    background-image:url('https://i.pinimg.com/736x/67/96/9c/67969ca6060305a6fb178602167c410c.jpg');
+  }
+
+  body.darkmode{
+    background-image:url('https://images.unsplash.com/photo-1513628253939-010e64ac66cd?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5pZ2h0JTIwc2t5fGVufDB8fDB8fHww');
+  }
+
 .data_overlay{
     background-color: var(--light-card);
     border: var(--card-border);
-    backdrop-filter: blur(16px) saturate(120%);
-    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
     border-radius: 20px;
     box-shadow: 5px 4px 8px 6px var(--card-shadow);
 }
@@ -116,32 +130,85 @@ body{
     right: 0px;
 }
 
+#data-submit{
+    border-color: var(--ip-border);
+}
+
+.srchicon{
+    color: var();
+}
+
+button.submit{
+    background-color: aquamarine;
+}
 
 #cityname::placeholder{
     color: var(--btn-toggle-clr) ;
 }
 
+#cityname{
+    height: 48px;
+    color: var(--text-color);
+}
 
 #content{
     color: var(--text-color);
+}
+
+h1.title{
+    color: var(--text-color);
+    font-size: 25px;
+}
+
+#temperature{
+    font-size:26px;
+}
+
+@media (min-width:450px){
+    h1.title{
+        font-size: 35px;
+    }
 }
 
 @media (max-width:768px){
     body{
         background-size: 100vw 100vh;
     }
-    
+
+    .togglenight{
+        font-size:2px;
+    }
+
+    .moon.sun{
+        top:7px;
+    }
+
+    .moon{
+        top:3px;
+    }
+
     .input__form{
-        width:400px;
+        width: 90%;
+    }
+
+    #data-submit .submit {
+        right: 1px;
     }
 }
 
 /* End Mobile Styles */
 
-
-
 /* Start Tablet Styles */
 @media (min-width:768px){
+
+    body.lightmode{
+        background-image:url('https://i.pinimg.com/736x/b9/fa/79/b9fa792566057d994c7f0f9e7bb1efa7.jpg');
+    }
+
+    body.darkmode{
+        background-image:url('https://w0.peakpx.com/wallpaper/252/544/HD-wallpaper-stars-on-blue-sky-space.jpg');
+    }
+
     .input__form{
         width:400px;
         padding:1px;
@@ -153,17 +220,37 @@ body{
     }
 }
 
-
-
 /* End Tablet Styles */
-
 
 /* Start Desktop Styles */
 @media (min-width:992px){
+    body.lightmode{
+        background-image:url('https://i.pinimg.com/736x/67/96/9c/67969ca6060305a6fb178602167c410c.jpg');
+    }
+
+    body.darkmode{
+        background-image:url('https://wallpapersok.com/images/hd/night-clear-sky-at-alps-6f53weasubiksxfb.jpg');
+    }
+
     .input__form{
         width:400px;
     }
 }
 
+@media (min-width:1200px){
+    body.lightmode{
+        background-image:url('https://static.vecteezy.com/system/resources/previews/011/953/756/large_2x/winter-sunny-landscape-with-frosted-trees-and-a-clear-sky-free-photo.jpg');
+    }
+}
 
-/* End Tablet Styles */
+@media (min-width:1400px){
+    body{
+        background-size: cover;
+    }
+
+    .data_overlay{
+        max-width: 900px;
+    }
+}
+
+/* End Desktop Styles */
