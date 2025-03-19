@@ -1,0 +1,169 @@
+body{
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.darkmode{
+    --light-card:   rgb(22 20 72 / 65%);;
+    --card-border: 1px solid rgba(255, 255, 255, 0.125);
+    --btn-toggle-clr:  #9ee3fb  ;
+
+    /* custom */
+    --mooncolor: #D9FBFF;
+    --bgColor--night: #423966;
+    --card-shadow: #FFFFFF;
+    --toggleBtn-bgColor--night: var(--bgColor--night);
+    --text-color: #ffffff;
+}
+
+.lightmode{
+    --light-card:  rgb(235 247 255 / 39%);
+    --card-border: 1px solid rgba(255, 255, 255, 0.125);
+    --btn-toggle-clr:#423966;
+    --lightbg: #fff;
+    --mooncolor: #ffffff;
+    --text-color: #001f75f3;
+    --card-shadow: #0e3938;
+}
+
+/* Start Mobile/common Styles */
+:root {
+    --toggleHeight: 16em;
+    --toggleWidth: 30em;
+    --toggleBtnRadius: 10em;
+  }
+
+  .togglenight {
+    margin: 0 auto;
+    /*change size of toggle with font-size*/
+    font-size: 3px;
+     position: absolute;
+     right: 10px ;
+     top : 10px;
+
+      height: var(--toggleHeight);
+      width: var(--toggleWidth);
+      border-radius: var(--toggleHeight);
+
+    transition: all 500ms ease-in-out;
+    background: var(--bgColor--night);
+    border: 2px solid var(--mooncolor);
+  }
+
+
+  .day{
+    background: #FFBF71;
+  }
+
+  .moon {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    transition: all 400ms ease-in-out;
+
+    top: 6px;
+    left: 12px;
+    transform: rotate(-75deg);
+
+    width: var(--toggleBtnRadius);
+    height: var(--toggleBtnRadius);
+    background: var(--bgColor--night);
+
+    box-shadow:
+      3em 2.5em 0 0em var(--mooncolor) inset,
+      rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
+      rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
+      rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
+  }
+
+  .sun {
+    top: 10px;
+    left: 18em;
+    transform: rotate(0deg);
+    width: 7em;
+    height: 7em;
+    background: #fff;
+    box-shadow: 3em 3em 0 5em #fff inset,
+      0 -5em 0 -2.7em #fff,
+      3.5em -3.5em 0 -3em #fff,
+      5em 0 0 -2.7em #fff,
+      3.5em 3.5em 0 -3em #fff,
+      0 5em 0 -2.7em #fff,
+      -3.5em 3.5em 0 -3em #fff,
+      -5em 0 0 -2.7em #fff,
+      -3.5em -3.5em 0 -3em #fff;
+  }
+
+.data_overlay{
+    background-color: var(--light-card);
+    border: var(--card-border);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border-radius: 20px;
+    box-shadow: 5px 4px 8px 6px var(--card-shadow);
+}
+
+#data-submit .submit{
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    bottom: 1px;
+    right: 0px;
+}
+
+
+#cityname::placeholder{
+    color: var(--btn-toggle-clr) ;
+}
+
+
+#content{
+    color: var(--text-color);
+}
+
+@media (max-width:768px){
+    body{
+        background-size: 100vw 100vh;
+    }
+    
+    .input__form{
+        width:400px;
+    }
+}
+
+/* End Mobile Styles */
+
+
+
+/* Start Tablet Styles */
+@media (min-width:768px){
+    .input__form{
+        width:400px;
+        padding:1px;
+    }
+
+    .input__form ,
+    .form-control {
+        height: 50px;
+    }
+}
+
+
+
+/* End Tablet Styles */
+
+
+/* Start Desktop Styles */
+@media (min-width:992px){
+    .input__form{
+        width:400px;
+    }
+}
+
+
+/* End Tablet Styles */
